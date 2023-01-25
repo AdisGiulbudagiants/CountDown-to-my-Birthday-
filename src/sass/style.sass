@@ -1,0 +1,147 @@
+@font-face
+    font-family: "Marhey"
+    src: url('/src/fonts/Marhey-SemiBold.ttf')
+    font-weight: SemiBold
+    font-style: normal
+    font-display: swap
+
+@font-face
+    font-family: "Exo"
+    src: url('/src/fonts/Exo2-Regular.ttf')
+    font-weight: regular
+    font-style: normal
+    font-display: swap
+
+$main-color: #FDC100
+$text-color: #6D5FFF
+
+.main-section
+    min-height: 800px
+    background: $main-color
+    position: relative
+    &__wrapper
+        display: flex
+        justify-content: center
+        padding-top: 15%
+
+.text-section
+    font-size: 86px
+    font-family: "Marhey"
+    font-weight: SemiBold
+    color: $text-color
+
+.timer
+    display: flex
+    justify-content: center
+    margin-bottom: 35px
+    &__items
+        display: flex
+        font-size: 90px
+    &__item
+        position: relative
+        min-width: 60px
+        margin-left: 10px
+        margin-right: 10px
+        padding-bottom: 15px
+        text-align: center
+        color: $text-color
+
+.timer__item::before
+    content: attr(data-title)
+    display: block
+    position: absolute
+    left: 50%
+    bottom: 0
+    transform: translateX(-50%)
+    font-size: 32px
+    font-family: "Exo"
+    font-weight: regular
+
+.timer__item:not(:last-child)::after
+    content: ':'
+    position: absolute
+    right: -15px
+
+// ПрогрессБар
+
+.progress
+    width: 450px
+    height: 30px
+    margin-bottom: 175px
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2)
+    border-radius: 20px
+::-webkit-progress-bar
+    background: white
+::-webkit-progress-value
+    background: $text-color
+
+.progress-container
+    max-width: 1000px
+    display: flex
+    justify-content: center
+
+.progress-bar
+    background: $text-color
+
+    // Подвал
+.footer
+    min-height: 150px
+    background: $text-color
+    &__wrapper
+        min-height: 150px
+        display: flex
+
+// Левая и правая обертка
+.wrapper-left
+    width: 50%
+    display: flex
+    justify-content: center
+    align-items: center
+.wrapper-right
+    width: 50%
+
+.breadcrumb
+    margin: 0
+
+.breadcrumb-item
+    margin-left: 30px
+    font-family: "Exo"
+    font-weight: regular
+    &:first-child
+        margin-left: 38px
+
+a
+    text-decoration: none
+    color: $main-color
+    font-size: 32px
+a:hover
+    color: white
+
+.offcanvas
+    background: $text-color
+.offcanvas-title
+    color: $main-color
+    font-size: 48px
+    margin-left: 23%
+
+.offcanvas-body
+    color: $main-color
+    font-size: 18px
+    &__text
+        margin-bottom: 30px
+    &__contact
+        font-size: 32px
+        color: $main-color
+    &__social
+        margin-bottom: 30px
+
+.social-network
+    margin-left: 20px
+    &__first
+        margin-left: 0px
+.email
+    color: $main-color
+    font-size: 32px
+
+span
+    font-size: 28px
